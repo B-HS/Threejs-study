@@ -1,16 +1,29 @@
-import { PresentationControls, Stage } from "@react-three/drei";
+import { Physics } from "@react-three/cannon";
+import { Sky, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Model } from "./Untitled";
+import { Ground } from "./Ground";
+import { Player } from "./Player";
+import { Model } from "./untitled";
+import { FPV } from "./FPV";
 
 const App = () => {
+    // fov : 카메라의 확대상태, 정보량
+    // aspect ratio: 카메라의 정보창의 비율
     return (
-        <Canvas camera={{ fov: 1 }}>
-            <PresentationControls speed={1.5}>
-                <Stage shadows={false}>
-                    <Model />
-                </Stage>
-            </PresentationControls>
-        </Canvas>
+        <>
+            <Canvas>
+                <Sky sunPosition={[100, 100, 20]} />
+                <ambientLight intensity={0.5} />
+                <FPV />
+                <Physics>
+                    <Stage shadows={false}>
+                        <Model />
+                    </Stage>
+                    <Ground />
+                    <Player />
+                </Physics>
+            </Canvas>
+        </>
     );
 };
 
