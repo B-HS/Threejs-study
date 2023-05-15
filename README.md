@@ -13,6 +13,9 @@
 4. 전체적으로 섞어서 포폴에 섞어보기
 5. 이하 생각나는 것 있으면 더 써내려감
 
+## 블로그
+- 맛보기 https://hbyun.tistory.com/231
+
 ## 현재
 1. 뭉탱이 파일에서 움직이기 구현
 2. camera의 fov, near, far, position등 감익히기
